@@ -102,3 +102,124 @@ function countVowels(s) {
 }
 
 console.log(countVowels(s))
+
+// 3.3.7
+
+// 1
+
+var favoriteRecipe = {
+  title: "pizza",
+  servings: 3,
+  ingredients: ["sunca", "masline", "ciuperci", "ketchup"]
+};
+
+console.log ("Title: " + favoriteRecipe.title);
+console.log ("Servings: " + favoriteRecipe.servings);
+console.log ("Ingredients:");
+
+for (i=0; i<favoriteRecipe.ingredients.length; i++) {
+  console.log(favoriteRecipe.ingredients[i]);
+}
+
+// 2
+
+function eliminateProperty(obj, property) {
+  const { [property]: omit, ...rest } = obj;
+  return rest;
+}
+
+const object = { a: 1, b: 2 };
+const property = "b";
+const result = eliminateProperty(object, property);
+console.log(result);
+
+// 3
+
+const books = [
+  {
+    title: "The Hobbit",
+    author: "J.R.R. Tolkien",
+    isRead: true
+  },
+  {
+    title: "Harry Potter",
+    author: "J.K. Rowling",
+    isRead: false
+  },
+  {
+    title: "1984",
+    author: "George Orwell",
+    isRead: true
+  }
+];
+
+function displayBookStatus(books) {
+  books.forEach((book) => {
+    const { title, author, isRead } = book;
+    if (isRead) {
+      console.log(`You have already read "${title}" by ${author}.`);
+    } else {
+      console.log(`You need to read "${title}" by ${author}.`);
+    }
+  });
+}
+displayBookStatus(books);
+
+// 3.4.5
+
+// 1
+
+console.log(Math.pow(5, 2));
+console.log(5 ** 2)
+
+const square = (number) => number ** 2
+console.log(square(5))
+
+// 2
+
+function getRandom(start, end) {
+  if (!Number.isInteger(start) || !Number.isInteger(end)) {
+      throw new Error;
+  }
+
+  if (start >= end) {
+      throw new Error;
+  }
+
+  const interval = end - start;
+
+  return start + Math.floor(Math.random() * interval);
+}
+
+const start = 1;
+const end = 100;
+const randomNumber = getRandom(start, end);
+console.log("random number is:", randomNumber);
+
+// 3
+
+function letterCount(str, letter) 
+{
+ var letter_Count = 0;
+ for (var position = 0; position < str.length; position++) 
+ {
+    if (str.charAt(position) == letter) 
+      {
+      letter_Count += 1;
+      }
+  }
+  return letter_Count;
+}
+
+console.log(letterCount("Îmi place programarea", "a"));
+console.log(letterCount("Vreau să lucrez în IT", "r"));
+
+// 4
+
+function addNumber(a, b, c, d, e) {
+  return a + b + c + d + e;
+}
+
+const number = [1, 2, 3, 4, 5];
+
+console.log(addNumber(...number));
