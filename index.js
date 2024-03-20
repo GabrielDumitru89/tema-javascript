@@ -1,12 +1,12 @@
 // 3.1.6
 // 1
 
-function boolean(num) {
+function number(num) {
     return num % 10 === 0 ? true: false;
 }
 
-console.log(boolean(50));
-console.log(boolean(35));
+console.log(number(50));
+console.log(number(35));
 
 // 2
 
